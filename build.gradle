@@ -1,4 +1,4 @@
-group 'com.bolyartech.forge.server.modules'
+group 'com.bolyartech.forge.server.module'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
