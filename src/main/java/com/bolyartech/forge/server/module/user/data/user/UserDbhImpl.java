@@ -2,7 +2,6 @@ package com.bolyartech.forge.server.module.user.data.user;
 
 import com.bolyartech.forge.server.db.DbUtils;
 import com.bolyartech.forge.server.module.user.data.UserLoginType;
-import com.bolyartech.forge.server.module.user.data.user_scram.UserScram;
 
 import java.sql.*;
 import java.util.List;
@@ -96,15 +95,5 @@ public class UserDbhImpl implements UserDbh {
                 return rs.next();
             }
         }
-    }
-
-
-    @Override
-    public List<UserScram> list(Connection dbc, long idGreaterThan, int limit) throws SQLException {
-        DbUtils.ensureOperationalDbc(dbc);
-
-        String sql = "SELECT users.id";
-
-        return null;
     }
 }

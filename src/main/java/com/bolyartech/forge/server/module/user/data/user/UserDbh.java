@@ -1,7 +1,6 @@
 package com.bolyartech.forge.server.module.user.data.user;
 
 import com.bolyartech.forge.server.module.user.data.UserLoginType;
-import com.bolyartech.forge.server.module.user.data.user_scram.UserScram;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -18,6 +17,4 @@ public interface UserDbh {
     User changeLoginType(Connection dbc, User user, UserLoginType lt) throws SQLException;
 
     boolean exists(Connection dbc, long id) throws SQLException;
-
-    List<UserScram> list(Connection dbc, long idGreaterThan, int limit) throws SQLException;
 }
