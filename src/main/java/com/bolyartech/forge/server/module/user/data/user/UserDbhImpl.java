@@ -4,7 +4,6 @@ import com.bolyartech.forge.server.db.DbUtils;
 import com.bolyartech.forge.server.module.user.data.UserLoginType;
 
 import java.sql.*;
-import java.util.List;
 
 
 public class UserDbhImpl implements UserDbh {

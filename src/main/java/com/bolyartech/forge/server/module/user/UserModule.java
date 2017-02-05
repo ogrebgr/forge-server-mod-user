@@ -3,6 +3,7 @@ package com.bolyartech.forge.server.module.user;
 import com.bolyartech.forge.server.db.DbPool;
 import com.bolyartech.forge.server.module.HttpModule;
 import com.bolyartech.forge.server.module.user.data.screen_name.ScreenNameDbh;
+import com.bolyartech.forge.server.module.user.data.screen_name.ScreenNameDbhImpl;
 import com.bolyartech.forge.server.module.user.endpoints.LogoutEp;
 import com.bolyartech.forge.server.module.user.endpoints.ScreenNameEp;
 import com.bolyartech.forge.server.route.PostRoute;
@@ -39,7 +40,12 @@ public final class UserModule implements HttpModule {
             DbPool dbPool,
             ScreenNameDbh screenNameDbh) {
 
-        this(DEFAULT_PATH_PREFIX, dbPool,  screenNameDbh);
+        this(DEFAULT_PATH_PREFIX, dbPool, screenNameDbh);
+    }
+
+
+    public static UserModule createDefault(DbPool dbPool) {
+        return new UserModule(dbPool, new ScreenNameDbhImpl());
     }
 
 
