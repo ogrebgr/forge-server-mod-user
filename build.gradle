@@ -8,10 +8,11 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
     jcenter()
+    mavenLocal()
 }
 
 dependencies {
-    compile 'com.bolyartech.forge:forge-server:4.1.0'
+    compile 'com.bolyartech.forge:forge-server:5.1.0'
 //    compile project(':forge-server')
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'mysql:mysql-connector-java:5.1.37'
