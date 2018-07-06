@@ -24,6 +24,10 @@ public class UserExtIdDbhImpl implements UserExtIdDbh {
 
     @Override
     public UserExtId loadByUser(Connection dbc, long user, UserExtId.Type type) throws SQLException {
+        if (user <= 0) {
+            throw new IllegalArgumentException("id <= 0");
+        }
+
         String sql = "SELECT id, ext_id FROM user_ext_ids WHERE user = ? and type = ?";
         try (PreparedStatement psLoad = dbc.prepareStatement(sql)) {
             psLoad.setLong(1, user);
