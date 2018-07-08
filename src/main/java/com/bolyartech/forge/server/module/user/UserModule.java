@@ -20,9 +20,9 @@ public final class UserModule implements HttpModule {
     private static final int MODULE_VERSION_CODE = 1;
     private static final String MODULE_VERSION_NAME = "1.0.0";
 
-    private final String mPathPrefix;
-    private final DbPool mDbPool;
-    private final ScreenNameDbh mScreenNameDbh;
+    private final String pathPrefix;
+    private final DbPool dbPool;
+    private final ScreenNameDbh screenNameDbh;
 
 
     public UserModule(String pathPrefix,
@@ -30,9 +30,9 @@ public final class UserModule implements HttpModule {
                       ScreenNameDbh screenNameDbh
     ) {
 
-        mPathPrefix = pathPrefix;
-        mDbPool = dbPool;
-        mScreenNameDbh = screenNameDbh;
+        this.pathPrefix = pathPrefix;
+        this.dbPool = dbPool;
+        this.screenNameDbh = screenNameDbh;
     }
 
 
@@ -53,9 +53,9 @@ public final class UserModule implements HttpModule {
     public List<Route> createRoutes() {
         List<Route> ret = new ArrayList<>();
 
-        ret.add(new PostRoute(mPathPrefix + "screen_name",
-                new ScreenNameEp(mDbPool, mScreenNameDbh)));
-        ret.add(new PostRoute(mPathPrefix + "logout",
+        ret.add(new PostRoute(pathPrefix + "screen_name",
+                new ScreenNameEp(dbPool, screenNameDbh)));
+        ret.add(new PostRoute(pathPrefix + "logout",
                 new LogoutEp()));
 
 

@@ -31,21 +31,21 @@ public class UserResponseCodes {
         SCREEN_NAME_CHANGE_NOT_SUPPORTED(-52);
 
 
-        private static final Map<Integer, Errors> mTypesByValue = new HashMap<>();
+        private static final Map<Integer, Errors> typesByValue = new HashMap<>();
 
         static {
             for (Errors type : Errors.values()) {
-                mTypesByValue.put(type.getCode(), type);
+                typesByValue.put(type.getCode(), type);
             }
         }
 
 
-        private final int mCode;
+        private final int code;
 
 
         Errors(int code) {
             if (code < 0) {
-                this.mCode = code;
+                this.code = code;
             } else {
                 throw new IllegalArgumentException("Code must be negative");
             }
@@ -53,7 +53,7 @@ public class UserResponseCodes {
 
 
         public static Errors fromInt(int code) {
-            Errors ret = mTypesByValue.get(code);
+            Errors ret = typesByValue.get(code);
             if (ret != null) {
                 return ret;
             } else {
@@ -64,7 +64,7 @@ public class UserResponseCodes {
 
         @Override
         public int getCode() {
-            return mCode;
+            return code;
         }
     }
 }

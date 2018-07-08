@@ -7,11 +7,11 @@ public enum UserLoginType {
     FACEBOOK(2),
     BLOWFISH(3);
 
-    private final long mCode;
+    private final long code;
 
 
     UserLoginType(long code) {
-        mCode = code;
+        this.code = code;
     }
 
 
@@ -33,6 +33,6 @@ public enum UserLoginType {
 
 
     public long getCode() {
-        return mCode;
+        return code;
     }
 }

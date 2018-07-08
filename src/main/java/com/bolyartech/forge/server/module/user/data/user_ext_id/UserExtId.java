@@ -11,37 +11,37 @@ public final class UserExtId {
     public static final int TYPE_FACEBOOK = 2;
 
 
-    private final long mId;
-    private final long mUser;
-    private final String mExtId;
-    private final Type mType;
+    private final long id;
+    private final long user;
+    private final String extId;
+    private final Type type;
 
 
     public UserExtId(long id, long user, String extId, Type type) {
-        mId = id;
-        mUser = user;
-        mExtId = extId;
-        mType = type;
+        this.id = id;
+        this.user = user;
+        this.extId = extId;
+        this.type = type;
     }
 
 
     public long getUser() {
-        return mUser;
+        return user;
     }
 
 
     public Type getType() {
-        return mType;
+        return type;
     }
 
 
     public long getId() {
-        return mId;
+        return id;
     }
 
 
     public String getExtId() {
-        return mExtId;
+        return extId;
     }
 
 

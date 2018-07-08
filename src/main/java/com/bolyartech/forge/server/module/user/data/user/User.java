@@ -6,15 +6,15 @@ import java.util.Objects;
 public final class User {
     private static final int MIN_PASSWORD_LENGTH = 7;
 
-    private final long mId;
-    private final boolean mIsDisabled;
-    private final long mLoginType;
+    private final long id;
+    private final boolean isDisabled;
+    private final long loginType;
 
 
     public User(long id, boolean isDisabled, long loginType) {
-        mId = id;
-        mIsDisabled = isDisabled;
-        mLoginType = loginType;
+        this.id = id;
+        this.isDisabled = isDisabled;
+        this.loginType = loginType;
     }
 
 
@@ -33,17 +33,17 @@ public final class User {
 
 
     public long getId() {
-        return mId;
+        return id;
     }
 
 
     public boolean isDisabled() {
-        return mIsDisabled;
+        return isDisabled;
     }
 
 
     public long getLoginType() {
-        return mLoginType;
+        return loginType;
     }
 
 
@@ -51,7 +51,7 @@ public final class User {
     public boolean equals(Object obj) {
         if (obj != null && obj instanceof User) {
             User other = (User) obj;
-            return other.getId() == mId && other.isDisabled() == mIsDisabled && other.getLoginType() == mLoginType;
+            return other.getId() == id && other.isDisabled() == isDisabled && other.getLoginType() == loginType;
         } else {
             return false;
         }
@@ -60,7 +60,7 @@ public final class User {
 
     @Override
     public int hashCode() {
-        return Objects.hash(mId, mIsDisabled, mLoginType);
+        return Objects.hash(id, isDisabled, loginType);
     }
 
 }

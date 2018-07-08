@@ -6,8 +6,8 @@ import java.util.Objects;
 
 
 public final class ScreenName {
-    private final long mUser;
-    private final String mScreenName;
+    private final long user;
+    private final String screenName;
 
 
     public ScreenName(long user, String screenName) {
@@ -23,8 +23,8 @@ public final class ScreenName {
             throw new IllegalArgumentException("invalid screen name");
         }
 
-        mUser = user;
-        mScreenName = screenName;
+        this.user = user;
+        this.screenName = screenName;
     }
 
 
@@ -34,12 +34,12 @@ public final class ScreenName {
 
 
     public long getUser() {
-        return mUser;
+        return user;
     }
 
 
     public String getScreenName() {
-        return mScreenName;
+        return screenName;
     }
 
 
@@ -48,7 +48,7 @@ public final class ScreenName {
         if (obj != null && obj instanceof ScreenName) {
             ScreenName other = (ScreenName) obj;
 
-            return other.mUser == mUser && other.getScreenName().equals(mScreenName);
+            return other.user == user && other.getScreenName().equals(screenName);
         } else {
             return false;
         }
@@ -57,6 +57,6 @@ public final class ScreenName {
 
     @Override
     public int hashCode() {
-        return Objects.hash(mUser, mScreenName);
+        return Objects.hash(user, screenName);
     }
 }

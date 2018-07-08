@@ -1,22 +1,22 @@
 package com.bolyartech.forge.server.module.user;
 
 public class ExternalUser {
-    private final String mExternalId;
-    private final String mEmail;
+    private final String externalId;
+    private final String email;
 
 
     public ExternalUser(String externalId, String email) {
-        mExternalId = externalId;
-        mEmail = email;
+        this.externalId = externalId;
+        this.email = email;
     }
 
 
     public String getExternalId() {
-        return mExternalId;
+        return externalId;
     }
 
 
     public String getEmail() {
-        return mEmail;
+        return email;
     }
 }
