@@ -5,7 +5,8 @@ public enum UserLoginType {
     SCRAM(0),
     GOOGLE(1),
     FACEBOOK(2),
-    BLOWFISH(3);
+    BLOWFISH(3),
+    ANONYMOUS(4);
 
     private final long code;
 
@@ -26,6 +27,14 @@ public enum UserLoginType {
 
         if (l == 2) {
             return UserLoginType.FACEBOOK;
+        }
+
+        if (l == 3) {
+            return UserLoginType.BLOWFISH;
+        }
+
+        if (l == 4) {
+            return UserLoginType.ANONYMOUS;
         }
 
         return UserLoginType.UNKNOWN;
